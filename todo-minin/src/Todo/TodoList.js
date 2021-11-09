@@ -8,10 +8,11 @@ const styles = {
    }
 }
 
-export default function TodoList(props){
+export default function TodoList(objTodo){
     return (
         <ul style={styles.ul}>
-            {props.todoObj.map(item => {
+            {objTodo.arrTodo.map(item => {
+//                 console.log(item)
                 return  <TodoItem todoItem={item} key={item.id}/>
             })}
         </ul>
