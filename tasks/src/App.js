@@ -1,5 +1,7 @@
 import React from 'react';
-import FavorMovie from "./Task/FavorMovie";
+import FavorMovie from "./components/FavorMovie.jsx";
+import QuoteDay from "./components/QuoteDay.jsx";
+import Time from "./components/Time.jsx";
 
 const objMovie = {
   name: "Forrest Gump", 
@@ -11,12 +13,19 @@ const objMovie = {
   poster: `https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg`
 }
 
+const quote = {
+  text: `Unable are the loved to die, for love is immortality.`,
+  textRu:`"Любимые не могут умереть, потому что любовь - бессмертие."`,
+  author: `Emily Dickinson`,
+}
+
 function App() {
   
   return (<div className='wrapper'>
-    <h2>My favorite movie</h2>
     <FavorMovie data={objMovie}/>
-  </div>
+    <QuoteDay data={quote}/>
+    <Time />
+    </div>
   )
 }
 
