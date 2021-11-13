@@ -2,6 +2,7 @@ import React from 'react';
 import FavorMovie from "./components/FavorMovie.jsx";
 import QuoteDay from "./components/QuoteDay.jsx";
 import Time from "./components/Time.jsx";
+import FootballClub from './components/FootballClub.jsx';
 
 const objMovie = {
   name: "Forrest Gump", 
@@ -25,6 +26,7 @@ function App() {
     <FavorMovie data={objMovie}/>
     <QuoteDay data={quote}/>
     <Time />
+    <FootballClub />
     </div>
   )
 }

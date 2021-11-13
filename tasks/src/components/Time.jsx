@@ -18,6 +18,7 @@ export default function Time() {
     <div>
       &nbsp;
       <h3 style={styles.h3}>Current time: <span style={styles.span}>{new Date().toLocaleTimeString()}</span></h3>
+      &nbsp;
     </div>
   );
   

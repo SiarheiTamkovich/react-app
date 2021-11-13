@@ -10,31 +10,29 @@ export default class QuoteDay extends React.Component {
   }
   
   render(){
-    console.log(this.state)
+//    console.log(this.state)
     return (
       <div>
           <button onClick={(e) => this.vewQuote()}>
            {this.state.isToggleOn ? 'Show quote' : 'Hide quote'}
           </button>
-          <div style={{color: "red"}}>
+          <div style={this.state.isToggleOn ? {display: "none"} : {display: "block"}}>
             <h3>Quote of the Day:</h3>
-            <br></br>
+            &nbsp;
             <div>{this.props.data.text}</div>
             <div>{this.props.data.textRu}</div>
             <div><strong>{this.props.data.author}</strong></div>
-          </div>
+         </div>
       </div>
     )
   }
 
-  vewQuote() {
+  vewQuote(){
     this.setState(prevState => ({
       isToggleOn: !prevState.isToggleOn
     }));
-    console.log(this.state)
+//    console.log(this.state)
   }
-  
-  
       
 }
 
