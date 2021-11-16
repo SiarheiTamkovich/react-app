@@ -1,10 +1,10 @@
 
-export default function FavorMovie(props){
+export function FavorMovie(props){
     return (
         <div>
             <h2>My favorite movie</h2>
             <div className="movies">
-                <div className="poster"><img src={props.data.poster} alt="poster"/></div>
+                <div className="poster"><img src={props.data.poster} alt="poster" target="_blank"/></div>
                 <div className="cards">        
                     <h1> {props.data.name} </h1> 
                     <ul>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class FootballClub extends React.Component {
+export class FootballClub extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -44,12 +44,12 @@ export default class FootballClub extends React.Component {
               <li key={item.id}>
                 &nbsp;
                 <ul>
-                   <li> <img src={item.img} alt="logo" /></li>
+                   <li> <img src={item.img} alt="logo" target="_blank"/></li>
                    <li> Team Name: &nbsp; <strong>{item.name}</strong> &nbsp;</li>
                    <li> Country:  &nbsp; <strong>{item.country}</strong>  &nbsp;</li>
                    <li> Town: &nbsp; <strong>{item.town}</strong> &nbsp;</li>
                    <li> Founded: &nbsp; <strong>{item.founded}</strong> &nbsp;</li>
-                   <li> Website: <a href={item.website} target="_blank">{item.website}</a></li>
+                   <li> Website: <a href={item.website} >{item.website}</a></li>
                 </ul>
               </li>
             ))}

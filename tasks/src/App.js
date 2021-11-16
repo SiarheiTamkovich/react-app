@@ -1,8 +1,8 @@
 import React from 'react';
-import FavorMovie from "./components/FavorMovie.jsx";
-import QuoteDay from "./components/QuoteDay.jsx";
-import Time from "./components/Time.jsx";
-import FootballClub from './components/FootballClub.jsx';
+import { FavorMovie } from "./components/FavorMovie.jsx";
+import { QuoteDay } from "./components/QuoteDay.jsx";
+import { Time } from "./components/Time.jsx";
+import { FootballClub } from './components/FootballClub.jsx';
 
 const objMovie = {
   name: "Forrest Gump", 
@@ -20,7 +20,7 @@ const quote = {
   author: `Emily Dickinson`,
 }
 
-function App() {
+export function App() {
   
   return (<div className='wrapper'>
     <FavorMovie data={objMovie}/>
@@ -31,4 +31,3 @@ function App() {
   )
 }
 
-export default App;

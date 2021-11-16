@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export default class QuoteDay extends React.Component {
+export class QuoteDay extends React.Component {
   
   constructor(props) {
     super(props);

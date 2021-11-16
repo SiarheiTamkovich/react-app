@@ -13,7 +13,7 @@ const styles = {
 
 }
 
-export default function Time() {
+export function Time() {
   return (
     <div>
       &nbsp;
