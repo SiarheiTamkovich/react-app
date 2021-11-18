@@ -42,19 +42,20 @@ export class FootballClub extends React.Component {
           <ul className="club">
             {items.map(item => (
               <li key={item.id}>
-                &nbsp;
+                <br></br>
                 <ul>
-                   <li> <img src={item.img} alt="logo" target="_blank"/></li>
-                   <li> Team Name: &nbsp; <strong>{item.name}</strong> &nbsp;</li>
-                   <li> Country:  &nbsp; <strong>{item.country}</strong>  &nbsp;</li>
-                   <li> Town: &nbsp; <strong>{item.town}</strong> &nbsp;</li>
-                   <li> Founded: &nbsp; <strong>{item.founded}</strong> &nbsp;</li>
-                   <li> Website: <a href={item.website} >{item.website}</a></li>
+                  <li> <img src={item.img} alt="logo" target="_blank"/></li>
+                  <li> Team Name: &nbsp; <strong>{item.name}</strong> &nbsp;</li>
+                  <li> Country:  &nbsp; <strong>{item.country}</strong>  &nbsp;</li>
+                  <li> Town: &nbsp; <strong>{item.town}</strong> &nbsp;</li>
+                  <li> Founded: &nbsp; <strong>{item.founded}</strong> &nbsp;</li>
+                  <li> Website: <a href={item.website} >{item.website}</a></li>
                 </ul>
               </li>
             ))}
+            <button>Change style</button>
           </ul>
         );
-      }
     }
   }
+}
