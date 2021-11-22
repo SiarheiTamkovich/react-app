@@ -34,7 +34,7 @@ export default function TodoItem({todoItem, index, onChange}){
                 {todoItem.title}
             </span>
             
-           <button className="rm">&times;</button>
+            <button className="rm">&times;</button>
         </li>
     )
 }
