@@ -1,2 +1,4 @@
 {
+    "liveServer.settings.CustomBrowser": "microsoft-edge",
+    "liveServer.settings.host": "192.168.100.16"
 }
