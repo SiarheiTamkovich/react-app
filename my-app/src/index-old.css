@@ -1,6 +1,5 @@
-:root {
-  --color-bg: #2C2C32;
-  --color-bg-hover: #0f7dc6;
+* {
+  margin: 0;
 }
 
 body {
@@ -17,28 +16,21 @@ code {
     monospace;
 }
 
-header {
-  background-color: var(--color-bg);
-  padding: 2rem 0;
-  text-align: center;
+.wrapper {
+  margin: 1rem auto;
+  width: 650px;
+  font-size: 14px;
 }
 
-header > a {
-  color: white;
-  text-decoration: none;
-  padding: 0 1rem;
+.movies,
+.club {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
 }
 
-header > a:hover {
-  text-decoration: underline;
+ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
 }
-
-h1 {
-  text-align: center;
-}
-
-.container {
-  max-width: 900px;
-  padding: 2rem 0;
-  margin: 0 auto;
-} 

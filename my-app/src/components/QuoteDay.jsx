@@ -1,5 +1,13 @@
 import React from 'react';
 
+
+const quote = {
+  text: `Unable are the loved to die, for love is immortality.`,
+  textRu:`"Любимые не могут умереть, потому что любовь - бессмертие."`,
+  author: `Emily Dickinson`,
+}
+
+
 export class QuoteDay extends React.Component {
   
   constructor(props) {
