@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-const Notfoundpage = () => {
+const Page404 = () => {
   return (
     <div>
       This page doesn't exist. Go <Link to="/">home</Link>
@@ -8,4 +8,4 @@ const Notfoundpage = () => {
   )
 }
 
-export {Notfoundpage};
+export {Page404};

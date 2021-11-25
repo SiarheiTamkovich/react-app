@@ -5,6 +5,7 @@ const Layout = () => {
     <>
       <header>
         <Link to="/">Home</Link>
+        <Link to="/todo">ToDo</Link>
         <Link to="/about">About</Link>
         <Link to="/blog">Blog</Link>
       </header>
@@ -12,7 +13,7 @@ const Layout = () => {
       <main className="container">
             <Outlet />
       </main>
-      <footer className="container">2021</footer>
+      <footer className="container">By Siarhei Tamkovich 2021</footer>
     </>
   )
 }

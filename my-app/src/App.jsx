@@ -1,9 +1,10 @@
 import { Routes, Route, Link } from 'react-router-dom';
 
-import { Homepage }     from "./pages/Homepage";
-import { About }        from "./pages/Aboutpage";
-import { Blogpage }     from "./pages/Blogpage";
-import { Notfoundpage } from "./pages/Notfoundpage";
+import { Home }         from "./pages/Home";
+import { About }        from "./pages/About";
+import { Blog }         from "./pages/Blog";
+import { Todo }         from "./pages/Todo";
+import { Page404 }      from "./pages/Page404";
 
 import { Layout }       from "./components/Layout";
 
@@ -12,10 +13,11 @@ export function App() {
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Homepage />} />
+          <Route index element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="blog" element={<Blogpage />} />
-          <Route path="*" element={<Notfoundpage />} />
+          <Route path="blog" element={<Blog />} />
+          <Route path="todo" element={<Todo />} />
+          <Route path="*" element={<Page404 />} />
         </Route>
       </Routes>
     </>
@@ -23,17 +25,3 @@ export function App() {
 }
 
 
-// export function App() {
-  
-//   return (<div className='wrapper'>
-//     <FavorMovie data={objMovie}/>
-//     <QuoteDay data={quote}/>
-//     <Time />
-//     <FootballClub />
-//     </div>
-//   )
-// }
-// import { FavorMovie } from "./components/FavorMovie.jsx";
-// import { QuoteDay } from "./components/QuoteDay.jsx";
-// import { Time } from "./components/Time.jsx";
-// import { FootballClub } from './components/FootballClub.jsx'; 
