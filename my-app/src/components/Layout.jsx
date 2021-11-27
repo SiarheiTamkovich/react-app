@@ -6,6 +6,8 @@ const Layout = () => {
       <header>
         <Link to="/">Home</Link>
         <Link to="/todo">ToDo</Link>
+        <Link to="/toby">ToBy</Link>
+        <Link to="/it-step">It Step</Link>
         <Link to="/about">About</Link>
         <Link to="/blog">Blog</Link>
       </header>
