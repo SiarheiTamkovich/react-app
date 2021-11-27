@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { TodoList } from "../components/Todo/TodoList";
 
 export const Todo = () => {
-  const [arrStart, setTodo] = React.useState([
+  const [arrStart, setTodo] = useState([
     {id: 1, completed: false, title: 'Купить хлеб'},
     {id: 2, completed: true, title: 'Купить масло'},
     {id: 3, completed: false, title: 'Купить молоко'},
@@ -18,7 +18,7 @@ export const Todo = () => {
       })
     )
   }
-  
+
   return (
     <div className='wrapper'>
       <h1>ToDo List</h1>
