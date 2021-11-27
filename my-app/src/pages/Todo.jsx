@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { TodoList } from "../components/Todo/TodoList";
+import { Context } from '../components/context';
+import { AddTodo } from '../components/Todo/AddTodo/AddTodo';
 
 export const Todo = () => {
   const [arrStart, setTodo] = useState([
@@ -19,11 +21,26 @@ export const Todo = () => {
     )
   }
 
+  function removeTodo(id){
+    setTodo(arrStart.filter(item => item.id !== id))
+  }
+
+  function addTodo(title){
+    setTodo(arrStart.concat([{
+      id: Date.now(),
+      completed: false,
+      title
+    }]))
+  }
+
   return (
-    <div className='wrapper'>
-      <h1>ToDo List</h1>
-      <TodoList arrTodo={arrStart} onToggle={toggleTodo}/>
-    </div>
+    <Context.Provider value={{ removeTodo }}>
+      <div className='wrapper'>
+        <h1>ToDo List</h1>
+        <AddTodo onCreate={addTodo}/>
+        {arrStart.length ? <TodoList arrTodo={arrStart} onToggle={toggleTodo} /> : <p>No ToDos!</p>}
+      </div>
+    </Context.Provider>
   )
 }
 
