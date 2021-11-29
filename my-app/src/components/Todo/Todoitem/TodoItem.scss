@@ -19,5 +19,27 @@
   text-decoration: line-through;
 }
 
+.remove-item {
+  background: none;
+  border: 0px;
+  color: #888;
+  font-size: 15px;
+  width: 60px;
+  font-family: Lato, sans-serif;
+  cursor: pointer;
 
+  &:hover {
+    color: #3a3a3a;
+  }
+}
+
+.button-image {
+  height: 2em;
+  transform: rotateZ(45deg);
+  transition: transform 200ms ease-in;
+}
+
+.button-image:hover {
+  transform: rotateZ(0);
+}
 
