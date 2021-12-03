@@ -16,7 +16,7 @@ export function TodoItem({todoItem, index, onChange}){
       </span>
         
         <button className="remove-item" onClick={() => removeTodo(todoItem.id)} >
-          <img class="button-image" src="../../../assets/svg/remove.svg" alt="icon remove"></img>
+          <img className="button-image" src="../../../assets/svg/remove.svg" alt="icon remove"></img>
         </button>
     </li>
   )

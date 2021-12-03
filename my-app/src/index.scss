@@ -12,6 +12,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root {
+  background-color: var(--color-bg);
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -38,8 +42,7 @@ h1 {
 }
 
 .container {
-  max-width: 1000px;
-  padding: 2rem 0;
+  box-sizing: border-box;
   margin: 0 auto;
 } 
 
@@ -64,6 +67,7 @@ h1 {
   border-color: rgb(9, 24, 231) transparent rgb(9, 24, 231) transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
+
 @keyframes lds-dual-ring {
   0% {
     transform: rotate(0deg);

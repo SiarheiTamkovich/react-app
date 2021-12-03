@@ -1,4 +1,5 @@
-import {TodoItem} from './Todoitem/TodoItem';
+import {TodoItem} from './TodoItem/TodoItem';
+import "./TodoList.scss";
 
 const styles = {
   ul: {

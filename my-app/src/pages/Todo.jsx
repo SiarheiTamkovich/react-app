@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import { TodoList } from "../components/Todo/TodoList";
-import { Context } from '../components/context';
-import { AddTodo } from '../components/Todo/AddTodo/AddTodo';
-import Loader from '../components/Loader';
+import { Context } from "../components/context";
+import { AddTodo } from "../components/Todo/AddTodo/AddTodo";
+import { Loader } from "../components/Loader.jsx";
 
 export const Todo = () => {
   const [arrStart, setTodo] = useState([])
@@ -19,7 +19,7 @@ export const Todo = () => {
       setTimeout(() => { // delay in action
         setTodo(arrStart)
         setLoading(false) // remove loader
-      }, 2000)
+      }, 1000)
     })
   }, [])
 

@@ -1,7 +1,11 @@
+import React from "react";
+import { TobyAdd } from "../components/Toby/TobyAdd";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 export const Toby = () => {
   return (
-    <div>
-      <h1>ToBy List</h1>
+    <div className="app-header">
+      <TobyAdd />
     </div>
   )
 }
