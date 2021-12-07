@@ -4,7 +4,7 @@ import "./TobyItem.scss";
 
 export const TobyItem = (props) => {
   const { dispatch, setTodoTitle, setIsEdited, setTitleBeforeEdit } =
-    useContext(ContextToby);
+  useContext(ContextToby);
 
   return (
     <div className="todo__item">
@@ -24,7 +24,7 @@ export const TobyItem = (props) => {
           />
           <span
             className={
-              props.completed || props.className ? "item__completed" : ""
+              props.completed ? "item__completed" : ""
             }
           >
             {props.point}. {props.title}
@@ -35,7 +35,7 @@ export const TobyItem = (props) => {
           <span className="creating-date">{props.date}</span>
           <button
             type="button"
-            class="btn btn-outline-primary"
+            className="btn btn-outline-primary"
             onClick={() => {
               setTodoTitle(props.title);
               setIsEdited(true);
@@ -46,7 +46,7 @@ export const TobyItem = (props) => {
           </button>
           <button
             type="button"
-            class="btn btn-outline-danger"
+            className="btn btn-outline-danger"
             onClick={() => {
               dispatch({
                 type: "remove",
@@ -54,7 +54,7 @@ export const TobyItem = (props) => {
               });
             }}
           >
-            <i class="bi bi-trash-fill"></i>Delete
+            <i className="bi bi-trash-fill"></i>Delete
           </button>
         </div>
       </div>
