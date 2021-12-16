@@ -11,7 +11,7 @@ export function SearchMovies() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://www.omdbapi.com/?apikey=6cb20a41&s=matrix')
+        fetch('http://www.omdbapi.com/?apikey=6cb20a41&s=terminator')
             .then(response => response.json())
             .then(data => {
                 setMovies(data.Search ? data.Search : []);
@@ -39,7 +39,7 @@ export function SearchMovies() {
     const handleReadMore = (id) => {
         setLoading(true);
         setShow('movie');
-        fetch(`http://www.omdbapi.com/?apikey=your-api-key&i=${id}&plot=full`)
+        fetch(`http://www.omdbapi.com/?apikey=6cb20a41&i=${id}&plot=full`)
             .then(response => response.json())
             .then(data => {
                 setMovie(data.Title ? data : {});

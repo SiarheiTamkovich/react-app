@@ -1,0 +1,45 @@
+.wrapper-about-film {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.title-about-film {
+  width: 100%;
+}
+
+.title-about-film h1 {
+  margin-top: 10px;
+  color: #fff;
+  padding-left: 10%;
+  text-align: left;
+}
+
+.poster-about-film {
+  margin-top: 10px;
+  width: 40%;
+}
+
+.text-about-film {
+  margin-top: 10px;
+  width: 60%;
+}
+
+.text-about-film ul {
+  color: #fff;
+  width: 60%;
+  margin-left: 10%;
+}
+
+.text-about-film p {
+  margin-left: 10%;
+  display: block;
+  color: #fff;
+}
+
+.btn-return {
+  margin-left: 10%;
+}

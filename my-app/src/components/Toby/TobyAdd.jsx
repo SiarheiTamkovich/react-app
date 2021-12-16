@@ -8,7 +8,7 @@ import "./TobyAdd.scss";
 const deadLine = 5000;
 
 export const TobyAdd = () => {
-
+  
   const [state, dispatch] = useReducer(
     Reducer,
     JSON.parse(localStorage.getItem("todos")) || []
