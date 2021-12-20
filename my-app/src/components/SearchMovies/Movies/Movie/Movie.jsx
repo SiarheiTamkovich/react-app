@@ -33,7 +33,12 @@ export function Movie(props) {
           <li>Actors: {Actors}</li>
         </ul>
         <p>{Plot}</p>
-        <button className="btn-return btn btn-outline-light">Return</button>
+        <button 
+          className="btn-return btn btn-outline-light"
+          onClick={(event) => {
+            console.log(props)
+          }} 
+        >Add to favorite</button>
       </div>
     </div>
   );

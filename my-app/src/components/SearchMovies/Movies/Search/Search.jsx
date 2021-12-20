@@ -20,11 +20,11 @@ export function Search(props) {
         <div className="row">
             <div className="input-field col s12">
                 <input
-                    type="text"
+                    type="search"
                     value={search}
                     onChange={event => setSearch(event.target.value)}
                     onKeyUp={handleEnter}
-                    placeholder="For example — matrix"
+                    placeholder="For example — terminator"
                 />
                 <button
                     className="btn btn-search-movie btn-outline-primary"
