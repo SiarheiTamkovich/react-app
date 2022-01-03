@@ -1,6 +1,5 @@
 .card {
   position: relative;
-  margin: 0.5rem 0 1rem 0;
   background-color: #fff;
   -webkit-transition: -webkit-box-shadow .25s;
   transition: -webkit-box-shadow .25s;
@@ -40,14 +39,14 @@
 }
 
 .card .card-content {
-  padding: 24px;
+  padding: 8px;
   border-radius: 0 0 2px 2px;
   box-sizing: inherit;
 }
 
 .card .card-content .card-title {
   display: block;
-  line-height: 32px;
+  line-height: 22px;
   margin-bottom: 8px;
 }
 
