@@ -7,3 +7,8 @@ export const addNotesAction = text => ({
   id: nextNoteId++,
   text,
 });
+
+export const toggleAction = (id) => ({
+  type: 'TOGGLE_NOTES',
+  id,
+});

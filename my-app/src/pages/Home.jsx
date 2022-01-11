@@ -1,4 +1,4 @@
-import "./Home.scss"
+import "./Home.scss";
 import { useDispatch, useSelector } from 'react-redux';
 import { increaseAction,  decreaseAction} from '../store/actions/actions';
 //import { store } from "../store/store";
@@ -20,15 +20,12 @@ export const Home = () => {
 
   return (
     <div className="home-container">
-      <div className="home-background">
-        <h1>Home page</h1>
+      <div className="home-background hide">
         <div>{counterSelector}</div>
         <button onClick={increase}>+</button>
         <button onClick={decrease}>-</button>
       </div>
-      <div>
         <AddNotes />
-      </div>
     </div>
   )
 }

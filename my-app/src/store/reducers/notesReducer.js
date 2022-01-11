@@ -17,6 +17,11 @@ export const notesReducer = (state = initialState, action) => {
           title: action.text,
         }
       ]
+    case 'TOGGLE_NOTES':
+    console.log(action)
+      return [
+        ...state,
+      ]
     default :
       return state;
   }

@@ -13,7 +13,12 @@ body {
 }
 
 #root {
+  height: 100vh;
   background-color: var(--color-bg);
+  background-image: url(https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/evening/16.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 code {
@@ -22,7 +27,7 @@ code {
 }
 
 header {
-  background-color: var(--color-bg);
+  background-color: rgba(44, 53, 54, 0.3);
   padding: 2rem 0;
   text-align: center;
 }
@@ -31,10 +36,14 @@ header > a {
   color: white;
   text-decoration: none;
   padding: 0 1rem;
+  transition: 0.5s;
 }
 
 header > a:hover {
-  text-decoration: underline;
+  color: #fff;
+  border-bottom: 4px solid #fff;
+  border-radius: 2px;
+  background-color: rgba(44, 53, 54, 0.2);
 }
 
 h1 {
