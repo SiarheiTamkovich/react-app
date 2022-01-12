@@ -18,11 +18,19 @@ export const notesReducer = (state = initialState, action) => {
         }
       ]
     case 'TOGGLE_NOTES':
-    console.log(action)
-      return [
-        ...state,
-      ]
-    default :
+      return state.map(item =>
+        (item.id === action.id) ? 
+        {...item, isCompleted: !item.isCompleted} : item,
+      );
+    case 'EDIT_NOTES':
+      return state.filter(item =>
+        (item.id !== action.id) 
+      );
+      case 'DELATE_NOTES':
+        return state.filter(item =>
+          (item.id !== action.id) 
+        );
+    default:
       return state;
   }
 };

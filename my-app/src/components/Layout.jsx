@@ -16,7 +16,7 @@ const Layout = () => {
       <main className="container">
             <Outlet />
       </main>
-      <footer className="container">By Siarhei Tamkovich 2021</footer>
+      <footer className="footer-container">© 2021 by Siarhei Tamkovich </footer>
     </>
   )
 }

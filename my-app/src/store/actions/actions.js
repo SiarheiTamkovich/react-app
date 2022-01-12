@@ -12,3 +12,13 @@ export const toggleAction = (id) => ({
   type: 'TOGGLE_NOTES',
   id,
 });
+
+export const editAction = (id) => ({
+  type: 'EDIT_NOTES',
+  id,
+})
+
+export const delateAction = (id) => ({
+  type: 'DELATE_NOTES',
+  id,
+})

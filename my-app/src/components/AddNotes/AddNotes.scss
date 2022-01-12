@@ -82,3 +82,9 @@
   height: 30px;
   transition: 0.8s;
 }
+
+.completed {
+  text-decoration: line-through;
+  font-style: italic;
+  color: rgb(228, 211, 211);
+}
