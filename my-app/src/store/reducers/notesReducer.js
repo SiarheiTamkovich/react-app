@@ -8,7 +8,6 @@ const initialState = [
 export const notesReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_NOTES':
-//      console.log(state)
       return [
         ...state,
         {
@@ -30,6 +29,15 @@ export const notesReducer = (state = initialState, action) => {
         return state.filter(item =>
           (item.id !== action.id) 
         );
+      case `LOAD_NOTES`:
+        action.payload.map(item => {
+          item.id = Math.floor(Math.random()*(1000-100+1)+100);
+          item.isCompleted = item.completed;
+          item.title = `id=${item.id}, ${item.title}, ${item.isCompleted}`;
+          delete item.completed;
+          delete item.userId;
+        })
+        return  [...state, ...action.payload]
     default:
       return state;
   }

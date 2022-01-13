@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { fetchNotes } from '../../store/actions/fetchNotes';
 import { addNotesAction } from '../../store/actions/actions';
 import { toggleAction } from '../../store/actions/actions';
 import { editAction } from '../../store/actions/actions';
@@ -16,7 +17,7 @@ export const AddNotes = () => {
     event.preventDefault();
     if(input.value) dispatch(addNotesAction(input.value));
     input.value = '';
-    btnSubmit.innerHTML = 'Add Note';
+    if(btnSubmit && btnSubmit.innerHTML !== 'Add Note') btnSubmit.innerHTML = 'Add Note';
   }
 
   const toggleItem = (event) => {
@@ -40,7 +41,10 @@ export const AddNotes = () => {
       <form className='notes-form' onSubmit={addItem}>
         <input ref={node => input = node}/>
         <button className='btn btn-outline-light' type="submit" id="btnSubmit">Add Note</button>
-        <button  className='btn btn-outline-light'>Load Nots</button>
+        <button className='btn btn-outline-light' 
+          onClick={() => dispatch(fetchNotes())}>
+            Load Nots
+        </button>
       </form>
       <ul>
         {notesSelector.map(item => {

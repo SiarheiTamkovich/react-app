@@ -22,3 +22,8 @@ export const delateAction = (id) => ({
   type: 'DELATE_NOTES',
   id,
 })
+
+export const loadAction = (payload) => ({
+  type: 'LOAD_NOTES',
+  payload,
+})
