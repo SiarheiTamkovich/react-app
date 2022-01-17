@@ -7,7 +7,7 @@ import { Single }       from "./pages/Single";
 import { Todo }         from "./pages/Todo";
 import { Toby }         from "./pages/Toby";
 import { ItStep }       from './pages/ItStep';
-import { SearchMovies } from "./components/SearchMovies/SearchMovies";
+import { SearchMovies } from "./pages/SearchMovies";
 import { Movie }        from './components/SearchMovies/Movies/Movie/Movie';
 import { Page404 }      from "./pages/Page404";
 

@@ -27,3 +27,8 @@ export const loadAction = (payload) => ({
   type: 'LOAD_NOTES',
   payload,
 })
+
+export const loadMovieAction = (payload) => ({
+  type: 'LOAD_MOVIE',
+  payload,
+})

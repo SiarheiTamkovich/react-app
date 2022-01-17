@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
-import { Movies } from "./Movies/Movies";
-import { Search } from "./Movies/Search/Search";
-import { Movie }  from "./Movies/Movie/Movie";
+import { Movies } from "../components/SearchMovies/Movies/Movies";
+import { Search } from "../components/SearchMovies/Movies/Search/Search";
+import { Movie }  from "../components/SearchMovies/Movies/Movie/Movie";
 import "./SearchMovies.scss"
 
 export function SearchMovies() {
