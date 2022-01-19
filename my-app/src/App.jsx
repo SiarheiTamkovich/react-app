@@ -7,8 +7,8 @@ import { Single }       from "./pages/Single";
 import { Todo }         from "./pages/Todo";
 import { Toby }         from "./pages/Toby";
 import { ItStep }       from './pages/ItStep';
-import { SearchMovies } from "./pages/SearchMovies";
-import { Movie }        from './components/SearchMovies/Movies/Movie/Movie';
+import { SearchMovies } from "./pages/SearchMoviesRedux";
+//import { Movie }        from './components/SearchMovies/Movies/Movie/Movie';
 import { Page404 }      from "./pages/Page404";
 
 import { Layout }       from "./components/Layout";
@@ -26,7 +26,7 @@ export function App() {
           <Route path="toby" element={<Toby />} />
           <Route path="it-step" element={<ItStep />} />
           <Route path="search-movies" element={<SearchMovies />} />
-          <Route path="search-movies/:imdbID" element={<Movie />} />
+          <Route path="search-movies/:id" element={<SearchMovies />} />
           <Route path="*" element={<Page404 />} />
         </Route>
       </Routes>

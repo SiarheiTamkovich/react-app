@@ -1,47 +1,53 @@
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import "./Card.scss"
 
-export function Card(props) {
-  const {
-    Title,
-    Year,
-    imdbID,
-    Type,
-    Poster
-  } = props;
-  const text = Title.replace(/^a-z0-9 /i, '').replace(/\s/, '+');
+export function Card() {
+  const movieSelector = useSelector(state => state.movie.Search);
+//  console.log(movieSelector)
+  
+  const handleReadMore = (id) => {
+   
+    console.log(id)
+  }
+
   return (
-    <div id={"movie-" + imdbID} className="card">
+    movieSelector.map(elem => 
+    <div key={elem.imdbID} className="card" data-card-id={elem.imdbID}>
       <div className="card-image waves-effect waves-block waves-light">
-        {Poster !== 'N/A' ? (
+      {elem.Poster !== 'N/A' ? (
           <img
             className="activator"
-            src={Poster}
+            src={elem.Poster}
             alt=""
           />
         ) : (
           <img
             className="activator"
-            src={`https://via.placeholder.com/300x430.png?text=${text}`}
+            src={`https://via.placeholder.com/300x430.png?text=
+              ${elem.Title.replace(/^a-z0-9 /i, '').replace(/\s/, '+')}`}
             alt=""
           />
         )}
       </div>
       <div className="card-content">
         <span className="card-title activator grey-text text-darken-4">
-          {Title}
+          {elem.Title}
         </span>
         <p>
-          <span>{Year}, {Type}</span>
-          <a 
-            href="_blanc" 
-            className="right"
-            onClick={(event) => {
-              event.preventDefault(); 
-              props.readMoreHandler(imdbID); 
-            }} 
-          >Read more</a>
+          <span>{elem.Year}, {elem.Type}</span>
+          <a href="_blanc" 
+              className="right"
+              onClick={(event) => {
+                event.preventDefault(); 
+                
+                handleReadMore(elem.imdbID); 
+              }} 
+          >sss</a>
+          <Link to={`/search-movies/${elem.imdbID}`}>Read more</Link>
         </p>  
       </div>
     </div>
+    )
   );
 }

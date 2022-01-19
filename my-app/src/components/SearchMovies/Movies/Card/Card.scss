@@ -10,12 +10,12 @@
 
 .card .card-title {
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 700;
 }
 
 .card .card-content .card-title {
   display: block;
-  line-height: 32px;
+  line-height: 26px;
   margin-bottom: 8px;
 }
 
@@ -42,12 +42,6 @@
   padding: 8px;
   border-radius: 0 0 2px 2px;
   box-sizing: inherit;
-}
-
-.card .card-content .card-title {
-  display: block;
-  line-height: 22px;
-  margin-bottom: 8px;
 }
 
 .card .card-content p {

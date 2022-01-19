@@ -30,13 +30,14 @@ export const notesReducer = (state = initialState, action) => {
           (item.id !== action.id) 
         );
       case `LOAD_NOTES`:
-        action.payload.map(item => {
+        action.payload.map((item) => {
           item.id = Math.floor(Math.random()*(1000-100+1)+100);
           item.isCompleted = item.completed;
           item.title = `id=${item.id}, ${item.title}, ${item.isCompleted}`;
           delete item.completed;
           delete item.userId;
-        })
+          return state;
+        });
         return  [...state, ...action.payload]
     default:
       return state;
