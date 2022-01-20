@@ -6,13 +6,12 @@ import { Card } from '../components/SearchMovies/Movies/Card/Card';
 import "./SearchMovies.scss"
 
 export const SearchMovies = () => {
-
   const dispatch = useDispatch();
   const movieSelector = useSelector(state => state.movie)
   if (movieSelector.length === 0) {
     dispatch(fetchMovie('terminator'));
   }
-//  console.log(movieSelector)
+  //console.log(movieSelector)
   
   const handleEnter = (search, type) => {
     if (search.trim() === "") return;
@@ -26,7 +25,8 @@ export const SearchMovies = () => {
         <Search enterHandler={handleEnter} />
       </div>
       <div className="movies">
-        {!movieSelector.Response ? (
+        {!movieSelector.Response ? 
+        (
           <Loader />
         ) : (
           <Card />

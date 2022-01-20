@@ -4,12 +4,7 @@ import "./Card.scss"
 
 export function Card() {
   const movieSelector = useSelector(state => state.movie.Search);
-//  console.log(movieSelector)
-  
-  const handleReadMore = (id) => {
-   
-    console.log(id)
-  }
+//console.log(movieSelector)
 
   return (
     movieSelector.map(elem => 
@@ -36,15 +31,9 @@ export function Card() {
         </span>
         <p>
           <span>{elem.Year}, {elem.Type}</span>
-          <a href="_blanc" 
-              className="right"
-              onClick={(event) => {
-                event.preventDefault(); 
-                
-                handleReadMore(elem.imdbID); 
-              }} 
-          >sss</a>
-          <Link to={`/search-movies/${elem.imdbID}`}>Read more</Link>
+          <Link to={`/search-movies/${elem.imdbID}`}className="right">
+            Read more
+          </Link>
         </p>  
       </div>
     </div>
