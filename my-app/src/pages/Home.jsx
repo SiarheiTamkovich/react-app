@@ -8,7 +8,7 @@ import { AddNotes } from "../components/AddNotes/AddNotes";
 export const Home = () => {
   const dispatch = useDispatch();
   const counterSelector = useSelector(state => state.count.value); 
-
+  
   const increase = () => {
     dispatch(increaseAction(5));
   }

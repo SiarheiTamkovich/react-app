@@ -1,10 +1,11 @@
 .wrapper-about-film {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
+  margin: 10px auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  background-color: rgba(44, 53, 54, 0.9);
+  border: 1px solid #fff;
+  border-radius: 10px;
 }
 
 .title-about-film {
@@ -19,7 +20,7 @@
 }
 
 .poster-about-film {
-  margin-top: 10px;
+  margin: 10px;
 }
 
 .text-about-film {
@@ -40,5 +41,5 @@
 }
 
 .btn-return {
-  margin-left: 30px;
+  margin: 0 0 20px 30px;
 }

@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMovie } from '../store/actions/fetchMovie';
+import { fetchMovie } from '../store/movie/movieFetchAction';
 import { Search } from '../components/SearchMovies/Movies/Search/Search';
 import { Loader } from '../components/SearchMovies/Loader/Loader'
 import { Card } from '../components/SearchMovies/Movies/Card/Card';

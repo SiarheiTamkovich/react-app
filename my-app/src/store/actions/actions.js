@@ -27,13 +27,3 @@ export const loadAction = (payload) => ({
   type: 'LOAD_NOTES',
   payload,
 })
-
-export const loadMovieAction = (payload) => ({
-  type: 'LOAD_MOVIE',
-  payload,
-})
-
-export const loadAboutMovieAction = (payload) => ({
-  type: 'LOAD_ABOUT_MOVIE',
-  payload,
-})

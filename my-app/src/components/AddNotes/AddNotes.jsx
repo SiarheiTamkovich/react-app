@@ -9,7 +9,8 @@ import './AddNotes.scss';
 export const AddNotes = () => {
   const dispatch = useDispatch();
   const notesSelector = useSelector(state => state.notes)
-
+  console.log(notesSelector)
+  
   const btnSubmit = document.getElementById('btnSubmit');
 
   let input;
@@ -48,7 +49,6 @@ export const AddNotes = () => {
       </form>
       <ul>
         {notesSelector.map(item => {
-
           return (
             <li key={item.id} id={item.id} className='notes-items'>
               <input 
