@@ -1,20 +1,21 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from "react-router";
-import { fetchAboutMovie } from '../../../../store/movie/movieFetchAction';
-import "./Movie.scss";
+import { fetchAboutMovie } from '../../../store/movie/movieFetchAction';
+import { Loader } from '../Loader/Loader';
+import "./AboutMovie.scss";
 
-export const Movie = () => {
+export const AboutMovie = () => {
   const {id} = useParams();
   const dispatch = useDispatch();
   const movieSelector = useSelector(state => state.movie_about);
 
   if (movieSelector.length === 0) {
     dispatch(fetchAboutMovie(id));
-    return <h3>Loading...</h3>;
+    return <h3><Loader /></h3>;
   }
   if (movieSelector.length !== 0 && movieSelector.imdbID !== id) {
     dispatch(fetchAboutMovie(id)); 
-    return <h3>Loading...</h3>;
+    return <h3><Loader /></h3>;
   }
   return (
     <div className="wrapper-about-film">
@@ -39,9 +40,10 @@ export const Movie = () => {
         <p>{movieSelector.Plot}</p>
         <button 
           className="btn-return btn btn-outline-light"
-          onClick={(event) => {
-            console.log(id)
-          }} 
+          onClick={(event) => 
+            {
+              console.log(id)
+            }} 
         >Add to favorite</button>
       </div>
     </div>

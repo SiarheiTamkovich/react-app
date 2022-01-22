@@ -5,7 +5,6 @@ import "./Card.scss"
 export function Card() {
   const movieSelector = useSelector(state => state.movie.Search);
 //console.log(movieSelector)
-
   return (
     movieSelector.map(elem => 
     <div key={elem.imdbID} className="card" data-card-id={elem.imdbID}>
@@ -31,7 +30,7 @@ export function Card() {
         </span>
         <p>
           <span>{elem.Year}, {elem.Type}</span>
-          <Link to={`/search-movies/${elem.imdbID}`}className="right">
+          <Link to={`/search-movies/${elem.imdbID}`} className="right">
             Read more
           </Link>
         </p>  
