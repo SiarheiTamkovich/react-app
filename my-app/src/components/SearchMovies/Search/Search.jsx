@@ -4,35 +4,29 @@ import "./Search.scss"
 
 export const Search = () => {
   const dispatch = useDispatch();
-  const location = document.location;
-    
+  const url = new URL(window.location.href);
+
   const onClickSubmit = (event) => {
-  
     const searchValue = event.target.parentNode.childNodes[0].value;
     if (searchValue.trim() === '') return;
-    const nextURL = window.location.href +'?'+ searchValue;
-    //history.replaceState(data,title,url);
-    window.history.replaceState({page:2},'JavaScript', nextURL); 
+
+    url.searchParams.set('title', searchValue);
+    console.log(url.searchParams.get('title'))
+    // modify the URL without reloading the page using the Location API
+    // history.replaceState(data,title,url)
+    window.history.replaceState({page:5},'JavaScript', url.href); 
     
     dispatch(fetchMovie(searchValue));
-    
-    // modify the URL without reloading the page using the Location API
-    // const nextURL = window.location.href +'?'+ searchValue;
-    
-    // window.location.href = nextURL;
-    // window.location.assign(nextURL); 
-    // window.location.replace(nextURL);
     console.log(window.location.href)
   }
   const onKeyUpEnter = (event) => {
     if (event.key === 'Enter') {
       const searchValue = event.target.value;
       if (searchValue.trim() === '') return;
-      const search = '?'+ searchValue;
-      const nextURL = window.location.href + search;
-      window.location.href = nextURL;
-      window.location.assign(nextURL); 
-      window.location.replace(nextURL);
+
+      url.searchParams.set('title', searchValue);
+      window.history.replaceState({page:5},'JavaScript', url.href); 
+      dispatch(fetchMovie(searchValue));
     }
   }
   const onChangeRadio = (event) => {
@@ -46,7 +40,7 @@ export const Search = () => {
             onKeyUp= {onKeyUpEnter} 
             type="search"
             placeholder="For example — terminator"
-            defaultValue={location.search.slice(1)}
+            defaultValue={url.searchParams.get('title')}
             autoFocus
         />
         <button
@@ -63,6 +57,7 @@ export const Search = () => {
             type="radio"
             name="type"
             value="all"
+            checked
           />
           <span>All</span>
         </label>
