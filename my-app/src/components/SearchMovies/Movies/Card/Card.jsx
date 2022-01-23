@@ -1,10 +1,12 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import noImg from './no-image.png';
 import "./Card.scss"
 
 export function Card() {
   const movieSelector = useSelector(state => state.movie.Search);
 //console.log(movieSelector)
+
   return (
     movieSelector.map(elem => 
     <div key={elem.imdbID} className="card" data-card-id={elem.imdbID}>
@@ -17,9 +19,12 @@ export function Card() {
           />
         ) : (
           <img
-            className="activator"
-            src={`https://via.placeholder.com/300x430.png?text=
-              ${elem.Title.replace(/^a-z0-9 /i, '').replace(/\s/, '+')}`}
+            className="activator image-no"
+            // src={`https://via.placeholder.com/300x430.png?text=
+            //   ${elem.Title.replace(/^a-z0-9 /i, '').replace(/\s/, '+')}`}
+            src={noImg}
+            width={200}
+            height={200}
             alt=""
           />
         )}
