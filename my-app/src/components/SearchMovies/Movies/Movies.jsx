@@ -10,8 +10,8 @@ export function Movies() {
   const url = new URL(window.location.href); // parse for reload page
   const search = url.searchParams.get('title');
 
-  if (movieSelector.length === 0 && !search) dispatch(fetchMovie('terminator'));
-  if (movieSelector.length === 0 && !!search) dispatch(fetchMovie(search));
+  if (movieSelector.length === 0 && !search) dispatch(fetchMovie('terminator','all', 1));
+  if (movieSelector.length === 0 && !!search) dispatch(fetchMovie(search, 'all', 1));
   if (movieSelector.Response !== 'True') return <h1>Movie not found</h1>;
   
   return (

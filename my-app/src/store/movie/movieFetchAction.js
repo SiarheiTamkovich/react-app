@@ -1,10 +1,16 @@
 const loadMovieAction = (payload) => ({
   type: 'LOAD_MOVIE',
   payload,
-})
+});
+const mainURL = 'http://www.omdbapi.com/';
+const apiKey = '6cb20a41';
 
-export const fetchMovie = (search) => {
-  let url = `http://www.omdbapi.com/?apikey=6cb20a41&s=${search}&plot=full`;
+export const fetchMovie = (search, type, page) => {
+
+  type === 'all' ? type = '' : type = '&type=' + type;
+
+  let url = mainURL + `?apikey=${apiKey}&s=${search}${type}&page=${page}&plot=full`;
+//  console.log(url)
   return function(dispatch) {
     fetch(url)
       .then(response => response.json())
@@ -18,7 +24,7 @@ const loadAboutMovieAction = (payload) => ({
 })
 
 export const fetchAboutMovie = (id) => {
-  let url = `http://www.omdbapi.com/?apikey=6cb20a41&i=${id}&plot=full`;
+  let url = mainURL + `?apikey=${apiKey}&i=${id}&plot=full`;
   return function(dispatch) {
     fetch(url)
       .then(response => response.json())

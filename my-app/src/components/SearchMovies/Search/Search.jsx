@@ -11,13 +11,15 @@ export const Search = () => {
     if (searchValue.trim() === '') return;
 
     url.searchParams.set('title', searchValue);
-    console.log(url.searchParams.get('title'))
     // modify the URL without reloading the page using the Location API
     // history.replaceState(data,title,url)
     window.history.replaceState({page:5},'JavaScript', url.href); 
-    
-    dispatch(fetchMovie(searchValue));
-    console.log(window.location.href)
+
+    const formRadio = document.getElementById('radio');
+    const typeValue = formRadio.elements['type'].value;
+
+    dispatch(fetchMovie(searchValue, typeValue, 1));
+//    console.log(window.location.href)
   }
   const onKeyUpEnter = (event) => {
     if (event.key === 'Enter') {
@@ -26,11 +28,17 @@ export const Search = () => {
 
       url.searchParams.set('title', searchValue);
       window.history.replaceState({page:5},'JavaScript', url.href); 
-      dispatch(fetchMovie(searchValue));
+
+      const formRadio = document.getElementById('radio');
+      const typeValue = formRadio.elements['type'].value;
+
+      dispatch(fetchMovie(searchValue, typeValue, 1));
     }
   }
   const onChangeRadio = (event) => {
-    console.log(event.target.value)
+    const typeValue = event.target.value;
+    window.history.replaceState({page:5},'JavaScript', url.href); 
+    dispatch(fetchMovie(url.searchParams.get('title'), typeValue, 1));
   }
 
   return (
@@ -50,14 +58,13 @@ export const Search = () => {
           Search
         </button>
       </div>
-      <p>
+      <form className='form-radio' id='radio'>
         <label className="label-btn-movie">
           <input className="with-gap form-check-input"
             onChange={onChangeRadio}
             type="radio"
             name="type"
             value="all"
-            checked
           />
           <span>All</span>
         </label>
@@ -68,7 +75,7 @@ export const Search = () => {
             name="type"
             value="movie"
           />
-          <span>Movies only</span>
+          <span>Movies</span>
         </label>
         <label className="label-btn-movie">
           <input className="with-gap form-check-input"
@@ -77,9 +84,18 @@ export const Search = () => {
             name="type"
             value="series"
           />
-          <span>Series only</span>
+          <span>Series</span>
         </label>
-      </p>
+        <label className="label-btn-movie">
+          <input className="with-gap form-check-input"
+            onChange={onChangeRadio}
+            type="radio"
+            name="type"
+            value="episode"
+          />
+          <span>Episode</span>
+        </label>
+      </form>
     </div>
   );
 }
