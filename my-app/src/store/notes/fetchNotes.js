@@ -1,4 +1,4 @@
-import { loadAction } from "./actions"
+import { loadAction } from "../notes/actionsNotes"
 
 export const fetchNotes = () => {
   return function(dispatch) {

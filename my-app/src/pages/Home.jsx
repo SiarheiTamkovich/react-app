@@ -1,6 +1,6 @@
 import "./Home.scss";
 import { useDispatch, useSelector } from 'react-redux';
-import { increaseAction,  decreaseAction} from '../store/actions/actions';
+import { increaseAction,  decreaseAction} from '../store/notes/actionsNotes';
 import { AddNotes } from "../components/AddNotes/AddNotes";
 
 //store.subscribe(() => console.log(store.getState()));

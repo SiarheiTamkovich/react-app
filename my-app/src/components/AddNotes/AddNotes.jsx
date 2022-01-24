@@ -1,9 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchNotes } from '../../store/actions/fetchNotes';
-import { addNotesAction } from '../../store/actions/actions';
-import { toggleAction } from '../../store/actions/actions';
-import { editAction } from '../../store/actions/actions';
-import { delateAction } from '../../store/actions/actions';
+import { 
+  addNotesAction, 
+  toggleAction, 
+  editAction, 
+  delateAction, 
+} from '../../store/notes/actionsNotes';
+import { fetchNotes } from '../../store/notes/fetchNotes';
 import './AddNotes.scss';
 
 export const AddNotes = () => {

@@ -12,7 +12,7 @@ export function Movies() {
 
   if (movieSelector.length === 0 && !search) dispatch(fetchMovie('terminator','all', 1));
   if (movieSelector.length === 0 && !!search) dispatch(fetchMovie(search, 'all', 1));
-  if (movieSelector.Response !== 'True') return <h1>Movie not found</h1>;
+  if (movieSelector.Response === 'False') return <h1>Movie not found</h1>;
   
   return (
     <>

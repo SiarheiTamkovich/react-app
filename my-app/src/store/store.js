@@ -1,6 +1,6 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux';
-import { counterReducer } from './reducers/counterReducer';
-import { notesReducer } from './reducers/notesReducer';
+import { counterReducer } from './notes/counterReducer';
+import { notesReducer } from './notes/notesReducer';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import { movieReducer, movieAboutReducer } from './movie/movieReducer';
