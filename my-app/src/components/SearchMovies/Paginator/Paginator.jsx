@@ -1,22 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import ReactPaginate from 'react-paginate';
+//import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+//import { fetchMovie } from '../../../store/movie/movieFetchAction';
 import './Paginator.scss';
 
-const items = [...Array(99).keys()];
+//const items = [...Array(200).keys()];
 
-function Items({ currentItems }) {
-  return (
-    <div className="items">
-    {currentItems && currentItems.map((item) => (
-      <div>
-        <h3>Item #{item}</h3>
-      </div>
-    ))}
-      </div>
-  );
-}
+// function Items({ currentItems }) {
+//   return (
+//     <div className="items">
+//     {currentItems && currentItems.map((item) => (
+//       <div>
+//         <h3>Item #{item}</h3>
+//       </div>
+//     ))}
+//       </div>
+//   );
+// }
 
-export function PaginatedItems({ itemsPerPage }) {
+export function PaginatedItems({ itemsPerPage, itemsAll }) {
+  const items = useMemo(() => [...Array(itemsAll).keys()], [itemsAll]);
+  const movieSelector = useSelector(state => state.movie);
+  console.log(movieSelector.totalResults)
+  
+ // const dispatch = useDispatch();
+  
   // We start with an empty list of items.
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
@@ -25,15 +34,15 @@ export function PaginatedItems({ itemsPerPage }) {
   const [itemOffset, setItemOffset] = useState(0);
 
   useEffect(() => {
-    // Fetch items from another resources.
+     // Fetch items from another resources.
     const endOffset = itemOffset + itemsPerPage;
     console.log(`Loading items from ${itemOffset} to ${endOffset}`);
     setCurrentItems(items.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(items.length / itemsPerPage));
-  }, [itemOffset, itemsPerPage]);
+  }, [items, itemOffset, itemsPerPage]);
 
   // Invoke when user click to request another page.
-  const handlePageClick = (event) => {
+  const handlePageClick = (event) => { 
     const newOffset = event.selected * itemsPerPage % items.length;
     console.log(`User requested page number ${event.selected}, which is offset ${newOffset}`);
     setItemOffset(newOffset);
@@ -41,7 +50,7 @@ export function PaginatedItems({ itemsPerPage }) {
 
   return (
     <>
-      <Items currentItems={currentItems} />
+      {/* <Items currentItems={currentItems} /> */ currentItems}
       <ReactPaginate
         nextLabel="next >"
         onPageChange={handlePageClick}

@@ -5,8 +5,8 @@ import { Card } from "./Card/Card";
 
 export function Movies() {
   const dispatch = useDispatch();
-  const movieSelector = useSelector(state => state.movie)
-
+  const movieSelector = useSelector(state => state.movie);
+  
   const url = new URL(window.location.href); // parse for reload page
   const search = url.searchParams.get('title');
 
