@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import ReactPaginate from 'react-paginate';
-//import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-//import { fetchMovie } from '../../../store/movie/movieFetchAction';
+import { fetchMovie } from '../../../store/movie/movieFetchAction';
 import './Paginator.scss';
 
 //const items = [...Array(200).keys()];
@@ -19,12 +19,12 @@ import './Paginator.scss';
 //   );
 // }
 
-export function PaginatedItems({ itemsPerPage, itemsAll }) {
-  const items = useMemo(() => [...Array(itemsAll).keys()], [itemsAll]);
+export function PaginatedItems({ itemsPerPage }) {
+  const dispatch = useDispatch();
+  const url = new URL(window.location.href);
   const movieSelector = useSelector(state => state.movie);
-  console.log(movieSelector.totalResults)
-  
- // const dispatch = useDispatch();
+  const itemsAll = Number(movieSelector.totalResults) || 1;
+  const items = useMemo(() => [...Array(itemsAll).keys()], [itemsAll]);
   
   // We start with an empty list of items.
   const [currentItems, setCurrentItems] = useState(null);
@@ -36,7 +36,7 @@ export function PaginatedItems({ itemsPerPage, itemsAll }) {
   useEffect(() => {
      // Fetch items from another resources.
     const endOffset = itemOffset + itemsPerPage;
-    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+//    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
     setCurrentItems(items.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(items.length / itemsPerPage));
   }, [items, itemOffset, itemsPerPage]);
@@ -44,13 +44,21 @@ export function PaginatedItems({ itemsPerPage, itemsAll }) {
   // Invoke when user click to request another page.
   const handlePageClick = (event) => { 
     const newOffset = event.selected * itemsPerPage % items.length;
-    console.log(`User requested page number ${event.selected}, which is offset ${newOffset}`);
+  //  console.log(`User requested page number ${event.selected}, which is offset ${newOffset}`);
+    
+    url.hash = event.selected + 1;
+    window.history.replaceState({page:5},'JavaScript', url.href); 
+
+    dispatch(fetchMovie(url.searchParams.get('title'), 'all', url.hash.slice(1)));
+    console.log(url.hash.slice(1))
+
     setItemOffset(newOffset);
   };
 
   return (
     <>
-      {/* <Items currentItems={currentItems} /> */ currentItems}
+      {/* <Items currentItems={currentItems} /> */ }
+      <div className='items'>{currentItems}</div>
       <ReactPaginate
         nextLabel="next >"
         onPageChange={handlePageClick}

@@ -19,7 +19,6 @@ export const Search = () => {
     const typeValue = formRadio.elements['type'].value;
 
     dispatch(fetchMovie(searchValue, typeValue, 1));
-//    console.log(window.location.href)
   }
   const onKeyUpEnter = (event) => {
     if (event.key === 'Enter') {
