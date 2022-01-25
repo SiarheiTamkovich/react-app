@@ -8,7 +8,7 @@ export const AboutMovie = () => {
   const {id} = useParams();
   const dispatch = useDispatch();
   const movieSelector = useSelector(state => state.movie_about);
-
+  console.log(movieSelector)
   if (movieSelector.length === 0) {
     dispatch(fetchAboutMovie(id));
     return <h3><Loader /></h3>;
@@ -32,9 +32,10 @@ export const AboutMovie = () => {
       </div>
       <div className="text-about-film">
         <ul>
-          <li>Year: {movieSelector.Year}</li>
-          <li>Runtime: {movieSelector.Runtime}</li>
-          <li>Genre: {movieSelector.Genre}</li>
+          <li>{movieSelector.Type}, Awards: {movieSelector.Awards}</li>
+          <li>{movieSelector.Year}, Runtime: {movieSelector.Runtime}, 
+            Country: {movieSelector.Country}</li>
+          <li>Director: {movieSelector.Director}, Genre: {movieSelector.Genre}</li>
           <li>Actors: {movieSelector.Actors}</li>
         </ul>
         <p>{movieSelector.Plot}</p>
