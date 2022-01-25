@@ -7,7 +7,7 @@ export const Search = () => {
   const url = new URL(window.location.href);
 
   const onClickSubmit = (event) => {
-    const searchValue = event.target.parentNode.childNodes[0].value;
+    const searchValue = event.target.parentNode.childNodes[0].childNodes[0].value;
     if (searchValue.trim() === '') return;
 
     url.searchParams.set('title', searchValue);
