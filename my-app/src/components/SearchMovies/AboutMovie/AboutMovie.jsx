@@ -8,7 +8,7 @@ export const AboutMovie = () => {
   const {id} = useParams();
   const dispatch = useDispatch();
   const movieSelector = useSelector(state => state.movie_about);
-  console.log(movieSelector)
+//  console.log(movieSelector)
   if (movieSelector.length === 0) {
     dispatch(fetchAboutMovie(id));
     return <h3><Loader /></h3>;
