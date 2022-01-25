@@ -1,7 +1,18 @@
+.row {
+  width: 100%;
+  align-items: center;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.input-movie {
+  margin: 0 !important;
+  padding-left: 0;
+}
+
 .btn-search-movie {
-  position: absolute;
-  top: 50px;
-  right: 2%;
+  width: 80px;
+  height: 40px;
   background-color: #fff;
 }
 
@@ -17,5 +28,5 @@
 }
 
 .form-radio {
-  margin: 0 0 15px 0;
+  width: 50%;
 }

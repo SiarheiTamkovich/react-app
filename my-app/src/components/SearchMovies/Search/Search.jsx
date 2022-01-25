@@ -36,13 +36,18 @@ export const Search = () => {
   }
   const onChangeRadio = (event) => {
     const typeValue = event.target.value;
+    url.searchParams.set('type', typeValue);
     window.history.replaceState({page:5},'JavaScript', url.href); 
-    dispatch(fetchMovie(url.searchParams.get('title'), typeValue, 1));
+    dispatch(fetchMovie(
+      url.searchParams.get('title'), 
+      url.searchParams.get('type'), 
+      url.hash.slice(1) || 1
+    ));
   }
 
   return (
     <div className="row">
-      <div className="input-field col s12">
+      <div className="input-field input-movie col s12">
         <input
             onKeyUp= {onKeyUpEnter} 
             type="search"
@@ -50,12 +55,6 @@ export const Search = () => {
             defaultValue={url.searchParams.get('title')}
             autoFocus
         />
-        <button
-          className="btn btn-search-movie btn-outline-primary"
-          onClick={onClickSubmit}
-          >
-          Search
-        </button>
       </div>
       <form className='form-radio' id='radio'>
         <label className="label-btn-movie">
@@ -90,11 +89,17 @@ export const Search = () => {
             onChange={onChangeRadio}
             type="radio"
             name="type"
-            value="episode"
+            value="game"
           />
-          <span>Episode</span>
+          <span>Games</span>
         </label>
       </form>
+      <button
+        className="btn btn-search-movie btn-outline-primary"
+        onClick={onClickSubmit}
+        >
+        Search
+      </button>
     </div>
   );
 }

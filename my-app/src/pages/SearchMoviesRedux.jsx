@@ -4,10 +4,7 @@ import { PaginatedItems } from '../components/SearchMovies/Paginator/Paginator';
 import "./SearchMovies.scss"
 
 export const SearchMovies = () => {
-  // const movieSelector = useSelector(state => state.movie);
-  // const itemsAll = Number(movieSelector.totalResults) || 1;
-  // console.log(itemsAll)
-
+ 
   return (
     <>
       <div className="movie-container">

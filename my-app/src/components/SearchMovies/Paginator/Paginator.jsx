@@ -49,9 +49,12 @@ export function PaginatedItems({ itemsPerPage }) {
     url.hash = event.selected + 1;
     window.history.replaceState({page:5},'JavaScript', url.href); 
 
-    dispatch(fetchMovie(url.searchParams.get('title'), 'all', url.hash.slice(1)));
-    console.log(url.hash.slice(1))
-
+    dispatch(fetchMovie(
+      url.searchParams.get('title') || 'terminator', 
+      url.searchParams.get('type') || 'all',
+      url.hash.slice(1) || 1
+    ));
+ 
     setItemOffset(newOffset);
   };
 
