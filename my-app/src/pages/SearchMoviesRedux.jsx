@@ -4,7 +4,7 @@ import { PaginatedItems } from '../components/SearchMovies/Paginator/Paginator';
 import "./SearchMovies.scss"
 
 export const SearchMovies = () => {
- 
+
   return (
     <>
       <div className="movie-container">

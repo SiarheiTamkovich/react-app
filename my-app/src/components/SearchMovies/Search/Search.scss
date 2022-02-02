@@ -6,6 +6,15 @@
   border-bottom: 1px solid #fff;
 }
 
+.favorite-forms {
+  display: flex;
+  justify-content: left;
+  width: 100%;
+  align-items: center;
+  margin: 0;
+  padding: 10px 0;
+}
+
 .input-movie {
   margin: 0 !important;
   padding-left: 0;
@@ -13,6 +22,12 @@
 
 .btn-search-movie {
   width: 80px;
+  height: 40px;
+  background-color: #fff;
+}
+
+.btn-open-favorite {
+  width: 170px;
   height: 40px;
   background-color: #fff;
 }

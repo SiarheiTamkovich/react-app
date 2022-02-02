@@ -9,6 +9,7 @@ import { Toby }         from "./pages/Toby";
 import { ItStep }       from './pages/ItStep';
 import { SearchMovies } from "./pages/SearchMoviesRedux";
 import { AboutMovie }   from './components/SearchMovies/AboutMovie/AboutMovie';
+import { Favorite }     from './components/SearchMovies/Favorite/Favorite';
 import { Page404 }      from "./pages/Page404";
 
 import { Layout }       from "./components/Layout";
@@ -27,6 +28,7 @@ export function App() {
           <Route path="it-step" element={<ItStep />} />
           <Route path="search-movies" element={<SearchMovies />} />
           <Route path="search-movies/:id" element={<AboutMovie />} />
+          <Route path="search-movies/favorite" element={<Favorite />} />
           <Route path="*" element={<Page404 />} />
         </Route>
       </Routes>

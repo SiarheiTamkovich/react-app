@@ -31,3 +31,8 @@ export const fetchAboutMovie = (id) => {
       .then(json => dispatch(loadAboutMovieAction(json)))
   }
 }
+
+export const loadFavoriteAction = (payload) => ({
+  type: 'LOAD_FAVORITE',
+  payload,
+})

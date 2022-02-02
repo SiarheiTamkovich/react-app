@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from "react-router";
 import { fetchAboutMovie } from '../../../store/movie/movieFetchAction';
+import { addMovieAction} from '../../../store/movie/favoriteAction';
 import { Loader } from '../Loader/Loader';
 import "./AboutMovie.scss";
 
@@ -8,6 +9,7 @@ export const AboutMovie = () => {
   const {id} = useParams();
   const dispatch = useDispatch();
   const movieSelector = useSelector(state => state.movie_about);
+  const favoriteSelector = useSelector(state => state.movie_favorite);
 //  console.log(movieSelector)
   if (movieSelector.length === 0) {
     dispatch(fetchAboutMovie(id));
@@ -17,6 +19,16 @@ export const AboutMovie = () => {
     dispatch(fetchAboutMovie(id)); 
     return <h3><Loader /></h3>;
   }
+
+  const onClickAddToFavoriteBtn = () => {
+    if ((favoriteSelector.length !== 0) && 
+        (favoriteSelector.filter(element => 
+            element.imdbID === movieSelector.imdbID).length !== 0)){
+      return;
+    }
+    return dispatch(addMovieAction(movieSelector));
+  }
+
   return (
     <div className="wrapper-about-film">
       <div className="title-about-film">
@@ -41,10 +53,7 @@ export const AboutMovie = () => {
         <p>{movieSelector.Plot}</p>
         <button 
           className="btn-return btn btn-outline-light"
-          onClick={(event) => 
-            {
-              console.log(id)
-            }} 
+          onClick={(event) => {onClickAddToFavoriteBtn()}} 
         >Add to favorite</button>
       </div>
     </div>

@@ -1,10 +1,13 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { fetchMovie } from '../../../store/movie/movieFetchAction';
+
 import "./Search.scss"
 
 export const Search = () => {
   const dispatch = useDispatch();
   const url = new URL(window.location.href);
+  const favoriteSelector = useSelector(state => state.movie_favorite);
 
   const onClickSubmit = (event) => {
     const searchValue = event.target.parentNode.childNodes[0].childNodes[0].value;
@@ -46,6 +49,7 @@ export const Search = () => {
   }
 
   return (
+    <>
     <div className="row">
       <div className="input-field input-movie col s12">
         <input
@@ -101,5 +105,13 @@ export const Search = () => {
         Search
       </button>
     </div>
+    <div className='favorite-forms'>
+      <Link to={'./favorite'}>
+        <button className="btn btn-open-favorite btn-outline-primary">
+          Favorite: {favoriteSelector.length} movies
+        </button>
+      </Link>
+    </div>
+    </>
   );
 }

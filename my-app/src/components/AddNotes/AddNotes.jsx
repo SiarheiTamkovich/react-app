@@ -11,7 +11,7 @@ import './AddNotes.scss';
 export const AddNotes = () => {
   const dispatch = useDispatch();
   const notesSelector = useSelector(state => state.notes);
-  console.log(notesSelector)
+//  console.log(notesSelector)
   
   const btnSubmit = document.getElementById('btnSubmit');
 
