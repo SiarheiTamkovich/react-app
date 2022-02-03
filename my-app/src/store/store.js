@@ -1,10 +1,18 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
+
 import { counterReducer } from './notes/counterReducer';
 import { notesReducer } from './notes/notesReducer';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import thunk from 'redux-thunk';
 import { movieReducer, movieAboutReducer } from './movie/movieReducer';
 import { favoriteReducer } from './movie/favoriteReducer';
+
+const persistConfig = {
+  key: 'root',
+  storage,
+}
 
 export const rootReducer = combineReducers({
   count: counterReducer,
@@ -14,4 +22,8 @@ export const rootReducer = combineReducers({
   movie_favorite: favoriteReducer,
 });
 
-export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+export const store = createStore(persistedReducer, composeWithDevTools(applyMiddleware(thunk)));
+
+export const persistor = persistStore(store);
