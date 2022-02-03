@@ -8,7 +8,7 @@
 
 .favorite-forms {
   display: flex;
-  justify-content: left;
+  justify-content: center;
   width: 100%;
   align-items: center;
   margin: 0;
@@ -45,4 +45,9 @@
 
 .form-radio {
   width: 50%;
+}
+
+.filter-text {
+  color: #fff;
+  margin: 10px;
 }

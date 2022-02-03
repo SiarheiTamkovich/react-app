@@ -106,6 +106,36 @@ export const Search = () => {
       </button>
     </div>
     <div className='favorite-forms'>
+      <input className="form-check-input"
+        type="checkbox"
+        value="" 
+      />
+      <span className='filter-text'>Action</span>
+      <input className="form-check-input"
+        type="checkbox"
+        value="" 
+      />
+      <span className='filter-text'>Comedy</span>
+      <input className="form-check-input"
+        type="checkbox"
+        value="" 
+      />
+      <span className='filter-text'>Romance</span>
+      <input className="form-check-input"
+        type="checkbox"
+        value="" 
+      />
+      <span className='filter-text'>Fantasy</span>
+      <input className="form-check-input"
+        type="checkbox"
+        value="" 
+      />
+      <span className='filter-text'>Adventure</span>
+      <input className="form-check-input"
+        type="checkbox"
+        value="" 
+      />
+      <span className='filter-text'>Documentary</span>
       <Link to={'./favorite'}>
         <button className="btn btn-open-favorite btn-outline-primary">
           Favorite: {favoriteSelector.length} movies

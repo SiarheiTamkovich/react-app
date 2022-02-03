@@ -43,3 +43,28 @@
 .btn-return {
   margin: 0 0 20px 30px;
 }
+
+.is-favorite {
+  top: 20px;
+  right: 30px;
+  position: absolute;
+  width: 120px;
+  height: 38px;
+  background-color: #fff;
+  color: blue;
+  font-size: 16px;
+  border: 4px solid blue;
+  border-radius: 10px;
+}
+
+.favor-check:before {
+  font-size: 30px;
+  font-weight: bold;
+  vertical-align: 0;
+}
+
+.is-favor-text {
+  position: absolute;
+  color: blue;
+  font-size: 20px;
+}
