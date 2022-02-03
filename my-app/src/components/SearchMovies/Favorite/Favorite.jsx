@@ -5,11 +5,10 @@ import "../Movies/Card/Card.scss"
 
 export const Favorite = () => {
   const movieSelector = useSelector(state => state.movie_favorite);
-  if (movieSelector.length === 0) return <h2 className='no-movies'> No movies favorite</h2>;
-//  console.log(movieSelector)
+  if (movieSelector.length === 0) return <h2 className="no-movies"> No movies favorite</h2>;
   
-    return (
-      <div className="movies">
+  return (
+    <div className="movies">
       {movieSelector.map(elem => 
       <div key={elem.imdbID} className="card" data-card-id={elem.imdbID}>
         <div className="card-image waves-effect waves-block waves-light">
@@ -42,7 +41,6 @@ export const Favorite = () => {
         </div>
       </div>
       )}
-      </div>
-    );
-
+    </div>
+  );
 }
