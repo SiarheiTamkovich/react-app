@@ -5,7 +5,6 @@ export const favoriteReducer = (state = initialState, action) => {
     case 'ADD_MOVIE':
       return [...state, {...action.payload}]; 
     case 'REMOVE_MOVIE':
-      console.log(action)
       return state.filter(item =>
         (item.imdbID !== action.payload.imdbID) 
       );
